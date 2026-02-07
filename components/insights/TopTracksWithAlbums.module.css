@@ -1,0 +1,186 @@
+.container {
+  width: 100%;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  color: var(--color-text-primary);
+  font-size: 1.5rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.trackCard {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.trackCard:hover {
+  background: var(--color-bg-hover);
+  transform: translateX(5px);
+  border-color: var(--color-primary);
+}
+
+.rank {
+  background: var(--color-primary);
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.albumArt {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg-tertiary);
+  flex-shrink: 0;
+}
+
+.albumImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.trackCard:hover .albumImage {
+  transform: scale(1.1);
+}
+
+.albumPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-bg-secondary) 100%);
+  color: var(--color-text-tertiary);
+}
+
+.albumPlaceholder svg {
+  width: 30px;
+  height: 30px;
+  opacity: 0.3;
+}
+
+.trackInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.trackName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.artistName {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.playCount {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  flex-shrink: 0;
+  padding-right: 3rem;
+}
+
+.spotifyLink {
+  position: absolute;
+  right: 0.75rem;
+  width: 36px;
+  height: 36px;
+  background: #1db954;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(29, 185, 84, 0.3);
+}
+
+.trackCard:hover .spotifyLink {
+  opacity: 1;
+}
+
+.spotifyLink:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(29, 185, 84, 0.5);
+}
+
+.spotifyLink svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+  .trackCard {
+    padding: 0.6rem;
+    gap: 0.75rem;
+  }
+  
+  .rank {
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+  }
+  
+  .albumArt {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .trackName {
+    font-size: 0.9rem;
+  }
+  
+  .artistName {
+    font-size: 0.8rem;
+  }
+  
+  .playCount {
+    font-size: 0.8rem;
+    padding-right: 2.5rem;
+  }
+  
+  .spotifyLink {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .spotifyLink svg {
+    width: 18px;
+    height: 18px;
+  }
+}

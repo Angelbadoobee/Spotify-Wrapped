@@ -1,0 +1,107 @@
+.container {
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(197, 108, 214, 0.1));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.confidenceBadge {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-primary);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid var(--color-primary);
+}
+
+.primaryArchetype {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.primaryArchetype h3 {
+  font-size: 3rem;
+  margin: 0;
+  margin-bottom: var(--spacing-sm);
+}
+
+.secondary {
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin: 0;
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-2xl);
+  text-align: center;
+}
+
+.traits h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.traitList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.trait {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background-color: rgba(255, 107, 157, 0.1);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+}
+
+.checkIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-xl);
+  }
+  
+  .header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+  }
+  
+  .primaryArchetype h3 {
+    font-size: 2rem;
+  }
+  
+  .traitList {
+    grid-template-columns: 1fr;
+  }
+}
