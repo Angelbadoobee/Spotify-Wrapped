@@ -99,7 +99,7 @@ export default function OverviewPage() {
                 (c: any) => c.iso === iso
               );
               return {
-                country: countryEntry?.country || iso,
+                country: (countryEntry as any)?.country || iso,
                 iso,
                 count,
               };
