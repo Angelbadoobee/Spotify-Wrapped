@@ -92,19 +92,26 @@ export default function OverviewPage() {
           });
           
           // Convert to array format
+          type ArtistCountry = {
+            country: string;
+            iso: string;
+          };
+
           const countries = Array.from(countryMap.entries())
             .map(([iso, count]) => {
-              // Find country name from artistCountries
-              const countryEntry = Object.values(artistCountries).find(
-                (c: any) => c.iso === iso
+              // Type-safe find
+              const countryEntry = (Object.values(artistCountries) as ArtistCountry[]).find(
+                (c) => c.iso === iso
               );
+
               return {
-                country: (countryEntry as any)?.country || iso,
+                country: countryEntry?.country || iso,
                 iso,
                 count,
               };
-            })
-            .sort((a, b) => b.count - a.count);
+              })
+              .sort((a, b) => b.count - a.count);
+
           
           setCountryData(countries);
         }
